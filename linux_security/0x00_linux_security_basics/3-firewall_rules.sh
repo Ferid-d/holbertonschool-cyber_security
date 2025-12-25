@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo ufw status
+sudo iptables status
