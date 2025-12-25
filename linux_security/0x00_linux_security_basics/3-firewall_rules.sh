@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo iptables status
+sudo iptables -Lnv
