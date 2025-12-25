@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo netstat
+sudo netstat -lutnp
