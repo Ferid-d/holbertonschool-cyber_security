@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo ss -t -a -n -p --no-header
+sudo ss -tanp --no-header
