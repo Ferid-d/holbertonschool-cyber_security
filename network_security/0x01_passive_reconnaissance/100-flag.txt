@@ -1,1 +1,7 @@
-8bb4f5c0f49d882f3899a8aee1586aa1
+EXPECTED="8bb4f5c0f49d882f3899a8aee1586aa1"
+
+if [[ "$1" == "$EXPECTED" ]]; then
+  printf "ok"
+else
+  printf "invalid"
+fi
