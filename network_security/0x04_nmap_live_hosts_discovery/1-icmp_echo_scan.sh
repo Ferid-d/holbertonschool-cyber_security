@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo nmap -sn -PE $i
+sudo nmap -sn -PE $1
