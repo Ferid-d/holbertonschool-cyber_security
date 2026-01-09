@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo nmap -sS -PE 22,80,443 $1
+sudo nmap -sS -PS 22,80,443 $1
