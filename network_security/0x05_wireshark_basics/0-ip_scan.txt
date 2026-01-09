@@ -1,0 +1,1 @@
+1	0.000000000	10.8.0.173	10.42.22.107	ICMP	28	Echo (ping) request  id=0x16f2, seq=0/0, ttl=58 (reply in 5)
