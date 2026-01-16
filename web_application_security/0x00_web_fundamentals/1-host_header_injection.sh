@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -H "Head: $1" -d "$3" "$2" -X "POST"
+curl -s -H "Head: $1" -d "$3" "$2" -X "POST"
