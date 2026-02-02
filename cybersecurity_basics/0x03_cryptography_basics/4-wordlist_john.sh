@@ -1,2 +1,2 @@
 #!/bin/bash
-john "$1" --wordlist=/usr/share/wordlists/rockyou.txt > 4-password.txt 
+john --wordlist=/usr/share/wordlists/rockyou.txt "$1" && john --show "$1" > 4-password.txt
