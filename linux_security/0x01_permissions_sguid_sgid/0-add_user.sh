@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo useradd holberton
-sudo passwd holberton
+useradd "$1"
+echo "$1:$2" | chpasswd
