@@ -1,2 +1,2 @@
 #!/bin/bash
-semanage port
+semanage port -l http
