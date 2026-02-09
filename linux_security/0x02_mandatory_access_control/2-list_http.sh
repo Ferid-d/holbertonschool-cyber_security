@@ -1,2 +1,2 @@
 #!/bin/bash
-sestatus -a -p
+semanage
