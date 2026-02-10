@@ -1,2 +1,2 @@
 #!/bin/bash
-find / -type d -perm -0002 -not -path "/proc/*" -not -path "/sys/*" -not -path "/dev/*" 2>/dev/null | xargs -r chmod o-w
+find / -xdev -type d -perm -0002 2>/dev/null | tee /dev/tty | xargs -r chmod o-w
