@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 """
-This script finds a string in the heap of a running process and replaces it.
+Finds and replaces a string in the heap of a running process.
 Usage: read_write_heap.py pid search_string replace_string
 """
-
 import sys
 
 
 def read_write_heap():
-    """
-    Main function to read from and write to the process heap.
-    """
+    """Reads and writes to the heap of a given process ID."""
     if len(sys.argv) != 4:
         print("Usage: read_write_heap.py pid search_string replace_string")
         sys.exit(1)
@@ -20,6 +17,7 @@ def read_write_heap():
     replace_str = sys.argv[3]
 
     if len(replace_str) > len(search_str):
+        # Orijinaldan uzun yazmaq olmaz
         sys.exit(1)
 
     try:
@@ -29,6 +27,7 @@ def read_write_heap():
         heap_start = None
         heap_end = None
 
+        # Heap diapazonunu tap
         with open(maps_path, 'r') as maps_file:
             for line in maps_file:
                 if "[heap]" in line:
@@ -41,8 +40,7 @@ def read_write_heap():
         if heap_start is None:
             sys.exit(1)
 
-        print("[*] Found heap at: {} - {}".format(hex(heap_start), hex(heap_end)))
-
+        # Yaddaşı aç və dəyişiklik et
         with open(mem_path, 'rb+') as mem_file:
             mem_file.seek(heap_start)
             heap_data = mem_file.read(heap_end - heap_start)
@@ -52,13 +50,10 @@ def read_write_heap():
             except ValueError:
                 sys.exit(1)
 
-            print("[*] Found '{}' at offset {}".format(search_str, hex(index)))
-
+            # Yazma prosesi
             mem_file.seek(heap_start + index)
             mem_file.write(bytes(replace_str, "ascii"))
             
-            print("[*] Successfully replaced with '{}'".format(replace_str))
-
     except Exception:
         sys.exit(1)
 
