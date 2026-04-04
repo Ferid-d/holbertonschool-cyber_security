@@ -1,8 +1,16 @@
 #!/usr/bin/python3
+"""
+This script finds a string in the heap of a running process and replaces it.
+Usage: read_write_heap.py pid search_string replace_string
+"""
 
 import sys
 
+
 def read_write_heap():
+    """
+    Main function to read from and write to the process heap.
+    """
     if len(sys.argv) != 4:
         print("Usage: read_write_heap.py pid search_string replace_string")
         sys.exit(1)
@@ -53,6 +61,7 @@ def read_write_heap():
 
     except Exception:
         sys.exit(1)
+
 
 if __name__ == "__main__":
     read_write_heap()
