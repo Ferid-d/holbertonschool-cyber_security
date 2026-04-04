@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+"""
+This script locates and replaces a string in the heap of a running process.
+"""
 import sys
 
 
 def main():
+    """Main execution block"""
     if len(sys.argv) != 4:
         print("Usage: read_write_heap.py pid search_string replace_string")
         sys.exit(1)
