@@ -1,1 +1,2 @@
-cat dmseg | grep Linux | grep version | cut -d']' -f2
+#!/bin/bash
+cat dmseg | grep Linux | grep version
